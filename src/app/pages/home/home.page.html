@@ -1,16 +1,42 @@
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/generate-qr">Generar QR</ion-item>
+      <ion-item routerLink="/scan-qr">Escanear QR</ion-item>
+      <ion-item routerLink="/profile">Ver Perfil</ion-item>
+      <ion-item routerLink="/logout">Cerrar Sesión</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- El resto de tu página -->
 <ion-header>
   <ion-toolbar color="tertiary">
-    <ion-icon slot="start" name="menu" class="ion-padding" size="large"></ion-icon>
+    <!-- Añadir funcionalidad al ícono de menú -->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
     <ion-title class="ion-text-center">Registro de Asistencia</ion-title>
-    <ion-icon slot="end" name="person-outline" class="ion-padding" size="large"></ion-icon>
+    <!-- Añadir funcionalidad al ícono de perfil -->
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profile">
+        <ion-icon name="person-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" id="main-content">
   <ion-text color="primary" class="ion-text-center">
     <h1>Bienvenido a RegistrAPP</h1>
   </ion-text>
-  
+
   <ion-list [inset]="true" lines="full" mode="ios">
     <ion-list-header mode="ios" color="primary">
       <ion-label>Acciones</ion-label>
@@ -31,7 +57,7 @@
     <!-- Botón para Ver Perfil -->
     <ion-item button routerLink="/profile">
       <ion-icon slot="start" name="person-outline"></ion-icon>
-      <ion-label>Ver Perfil</ion-label> <!-- Corregido -->
+      <ion-label>Ver Perfil</ion-label>
     </ion-item>
 
     <!-- Botón para Cerrar Sesión -->
