@@ -15,15 +15,12 @@
   </ion-content>
 </ion-menu>
 
-<!-- El resto de tu página -->
 <ion-header>
   <ion-toolbar color="tertiary">
-    <!-- Añadir funcionalidad al ícono de menú -->
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center">Registro de Asistencia</ion-title>
-    <!-- Añadir funcionalidad al ícono de perfil -->
     <ion-buttons slot="end">
       <ion-button routerLink="/profile">
         <ion-icon name="person-outline" size="large"></ion-icon>
@@ -42,25 +39,21 @@
       <ion-label>Acciones</ion-label>
     </ion-list-header>
 
-    <!-- Botón para Generar QR -->
     <ion-item button routerLink="/generate-qr">
       <ion-icon slot="start" name="qr-code-outline"></ion-icon>
       <ion-label>Generar QR</ion-label>
     </ion-item>
 
-    <!-- Botón para Escanear QR -->
     <ion-item button routerLink="/scan-qr">
       <ion-icon slot="start" name="camera-outline"></ion-icon>
       <ion-label>Escanear QR</ion-label>
     </ion-item>
 
-    <!-- Botón para Ver Perfil -->
     <ion-item button routerLink="/profile">
       <ion-icon slot="start" name="person-outline"></ion-icon>
       <ion-label>Ver Perfil</ion-label>
     </ion-item>
 
-    <!-- Botón para Cerrar Sesión -->
     <ion-item button routerLink="/logout">
       <ion-icon slot="start" name="log-out-outline"></ion-icon>
       <ion-label>Cerrar Sesión</ion-label>
