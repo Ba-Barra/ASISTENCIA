@@ -30,22 +30,18 @@ export class HomePage implements OnInit {
 
   ngOnInit() { }
 
-  // Método vacío para generar QR
   generateQR() {
     console.log('Generar QR');
   }
 
-  // Método vacío para escanear QR
   scanQR() {
     console.log('Escanear QR');
   }
 
-  // Método vacío para ver el perfil
   viewProfile() {
     console.log('Ver Perfil');
   }
 
-  // Método vacío para cerrar sesión
   logout() {
     console.log('Cerrar sesión');
   }
