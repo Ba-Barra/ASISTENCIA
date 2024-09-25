@@ -1,3 +1,31 @@
-.header_color{
-    color:whitesmoke;
+.header_color {
+  color: whitesmoke;
+}
+.alumno {
+  display: flex;
+  flex-direction: column;
+}
+.texto {
+  color: whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 50;
+  transform: translate(50%, 0%);
+  background-color: black;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+.docente,
+.alumno {
+  position: relative;
+}
+.imagenes {
+  width: 130px;
+  object-fit: cover;
+  height: 130px;
+}
+
+ion-row {
+  justify-content: center;
+  align-items: center;
 }
