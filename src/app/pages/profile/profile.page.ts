@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router'; // Importa Router aquí
 
 @Component({
   selector: 'app-profile',
@@ -9,23 +10,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ProfilePage implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { 
-    // Inicializar el formulario aquí para evitar el error
+  constructor(private formBuilder: FormBuilder, private router: Router) { // Inyecta Router en el constructor
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  ngOnInit() {
-    // El formulario ya está inicializado en el constructor, así que este método puede estar vacío
-  }
+  ngOnInit() {}
 
   login() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
-      console.log('Login exitoso con usuario:', username, 'y contraseña:', password);
-      // Aquí podrías agregar la lógica para manejar el inicio de sesión
+      console.log('Login exitoso con usuario:', username);
+
+     
+      if (username.endsWith('@duoc.cl')) {
+        console.log('Redirigiendo a la página de alumno...');
+        this.router.navigate(['/alumno']); 
+      } else if (username.endsWith('@profesor.duoc.cl')) {
+        console.log('Redirigiendo a la página de docente...');
+        this.router.navigate(['/docente']); 
+      } else {
+        console.log('Correo no reconocido');
+      }
     } else {
       console.log('Formulario inválido');
     }
