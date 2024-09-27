@@ -25,10 +25,10 @@ export class ProfilePage implements OnInit {
       console.log('Login exitoso con usuario:', username);
 
      
-      if (username.endsWith('@duoc.cl')) {
+      if (username.includes('@duocuc.cl') || username.includes('@duoc.cl')) {
         console.log('Redirigiendo a la página de alumno...');
         this.router.navigate(['/alumno']); 
-      } else if (username.endsWith('@profesor.duoc.cl')) {
+      } else if (username.includes('@profesor.duoc.cl') || username.includes('@profesor.duocuc.cl') ) {
         console.log('Redirigiendo a la página de docente...');
         this.router.navigate(['/docente']); 
       } else {
