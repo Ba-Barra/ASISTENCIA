@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; // Importa Router aquí
+import { AlmacenamientoService } from '../almacenamiento.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,27 +11,41 @@ import { Router } from '@angular/router'; // Importa Router aquí
 export class ProfilePage implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { // Inyecta Router en el constructor
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private almacenamiento: AlmacenamientoService
+  ) {
+    // Inyecta Router en el constructor
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   ngOnInit() {}
-
   login() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
       console.log('Login exitoso con usuario:', username);
 
-     
       if (username.includes('@duocuc.cl') || username.includes('@duoc.cl')) {
         console.log('Redirigiendo a la página de alumno...');
-        this.router.navigate(['/alumno']); 
-      } else if (username.includes('@profesor.duoc.cl') || username.includes('@profesor.duocuc.cl') ) {
+        this.almacenamiento.set('usuario', {
+          correo: username,
+          contraseña: password,
+        });
+        this.router.navigate(['/alumno']);
+      } else if (
+        username.includes('@profesor.duoc.cl') ||
+        username.includes('@profesor.duocuc.cl')
+      ) {
         console.log('Redirigiendo a la página de docente...');
-        this.router.navigate(['/docente']); 
+        this.almacenamiento.set('usuario', {
+          correo: username,
+          contraseña: password,
+        });
+        this.router.navigate(['/docente']);
       } else {
         console.log('Correo no reconocido');
       }

@@ -1,52 +1,28 @@
-<ion-menu side="start" content-id="main-content">
-  <ion-header>
-    <ion-toolbar color="tertiary">
-      <ion-title>Menú</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>   
-    <ion-list>
-
-      <ion-item routerLink="/generate-qr">Generar QR</ion-item>
-      <ion-item routerLink="/scan-qr">Escanear QR</ion-item>
-      <ion-item routerLink="/profile">Ver Perfil</ion-item>
-      <ion-item routerLink="/logout">Cerrar Sesión</ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
 <ion-header>
   <ion-toolbar color="tertiary">
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">Registro de Asistencia</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/profile">
-        <ion-icon name="person-outline" size="large"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <ion-title class="ion-text-center">Chanchi-Duoc</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="ion-padding" id="main-content">
-  <ion-text color="primary" class="ion-text-center">
-    <h1></h1>
-  </ion-text>
+  <ion-text color="primary" class="ion-text-center"> </ion-text>
 
   <ion-row>
     <ion-col size="12">
-      <button class="docente"
-       routerLink="/profile">
-        <ion-img class="imagenes" src="../../../assets/chanchi-profesor.jpg"></ion-img>
-        <ion-label class="texto">Docente</ion-label> 
+      <button class="docente" routerLink="/profile">
+        <ion-img
+          class="imagenes"
+          src="../../../assets/chanchi-profesor.jpg"
+        ></ion-img>
+        <ion-label class="texto-imagen">Docente</ion-label>
       </button>
     </ion-col>
     <ion-col size="12">
       <button class="alumno" routerLink="/profile">
-        <ion-img class="imagenes" src="../../../assets/chanchi-estudiante.jpg"></ion-img>
-        <span class="texto">Alumno</span>
+        <ion-img
+          class="imagenes"
+          src="../../../assets/chanchi-estudiante.jpg"
+        ></ion-img>
+        <ion-label class="texto-imagen">Alumno</ion-label>
       </button>
     </ion-col>
   </ion-row>
