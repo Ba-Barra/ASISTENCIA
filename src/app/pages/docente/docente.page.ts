@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-docente',
@@ -8,17 +8,23 @@ import { Router } from '@angular/router';
 })
 export class DocentePage implements OnInit {
   cursos = [
-    { id: '1', nombre: 'Programacion de aplicaciones moviles' },
-    { id: '2', nombre: 'Arquitectura' },
-    { id: '3', nombre: 'Calidad de software' },
-    
+    { id: '1', nombre: 'Curso1' },
+    { id: '2', nombre: 'Curso2' },
+    { id: '3', nombre: 'Curso3' },
+
   ];
 
-  constructor(private router: Router) {} 
+  mostrarCursos = false; 
+
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
+  toggleCursos() {
+    this.mostrarCursos = !this.mostrarCursos; 
+  }
+
   verCurso(cursoId: string) {
-    this.router.navigate(['/curso-detalle', cursoId]); 
+    this.router.navigate(['/curso-detalle', cursoId]);
   }
 }
