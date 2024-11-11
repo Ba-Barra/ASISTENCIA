@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path: 'docente',
     loadChildren: () => import('./pages/docente/docente.module').then( m => m.DocentePageModule)
-  },  {
+  },
+  {
     path: 'alumno',
     loadChildren: () => import('./pages/alumno/alumno.module').then( m => m.AlumnoPageModule)
   },
@@ -39,12 +40,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/cursos-docente/cursos-docente.module').then( m => m.CursosDocentePageModule)
   },
   {
-    path: 'curso-detalle',
+    path: 'curso-detalle/:id', 
     loadChildren: () => import('./pages/curso-detalle/curso-detalle.module').then( m => m.CursoDetallePageModule)
   }
-
-
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

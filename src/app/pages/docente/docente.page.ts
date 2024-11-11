@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-docente',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./docente.page.scss'],
 })
 export class DocentePage implements OnInit {
+  cursos = [
+    { id: '1', nombre: 'Programacion de aplicaciones moviles' },
+    { id: '2', nombre: 'Arquitectura' },
+    { id: '3', nombre: 'Calidad de software' },
+    
+  ];
 
-  constructor() { }
+  constructor(private router: Router) {} 
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  verCurso(cursoId: string) {
+    this.router.navigate(['/curso-detalle', cursoId]); 
   }
-
 }

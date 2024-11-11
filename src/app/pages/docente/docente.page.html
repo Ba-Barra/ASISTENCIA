@@ -8,16 +8,18 @@
   <div class="docente">
     <img src="../../../assets/rolf.webp" alt="" class="rolf" />
   </div>
+  
   <ion-list>
     <ion-item button routerLink="/generate-qr">
       <ion-icon slot="start" name="qr-code-outline"></ion-icon>
       <ion-label>Generar QR</ion-label>
     </ion-item>
 
-    <ion-item button routerLink="/cursos-docente">
+    <ion-item button (click)="verCurso(curso.id)" *ngFor="let curso of cursos">
       <ion-icon slot="start" name="book-outline"></ion-icon>
-      <ion-label>Ver Cursos</ion-label>
+      <ion-label>{{ curso.nombre }}</ion-label>
     </ion-item>
+
     <ion-item button routerLink="/home">
       <ion-icon slot="start" name="exit"></ion-icon>
       <ion-label>Cerrar Sesión</ion-label>
